@@ -1,0 +1,9 @@
+stm32f411\cjson.o: ..\Components\cJSON.c
+stm32f411\cjson.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\string.h
+stm32f411\cjson.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdio.h
+stm32f411\cjson.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\math.h
+stm32f411\cjson.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdlib.h
+stm32f411\cjson.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\float.h
+stm32f411\cjson.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\limits.h
+stm32f411\cjson.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\ctype.h
+stm32f411\cjson.o: ../Core/Inc/cJSON.h
