@@ -1865,8 +1865,6 @@ void Execute_Alarm_Action(const Alarm_TypeDef *alarm, int index)
             deviceArray[Alarm_DeviceID-1].expectedState = DEVICE_ON;
             deviceArray[Alarm_DeviceID-1].appCommandReceived = true;
             deviceArray[Alarm_DeviceID-1].lastCommandTime = HAL_GetTick();
-						//UpdateState();
-						//ModeTask=Remote;
         }
         else if(alarm->light_action == LIGHT_OFF)
         {
@@ -1875,34 +1873,8 @@ void Execute_Alarm_Action(const Alarm_TypeDef *alarm, int index)
             deviceArray[Alarm_DeviceID-1].expectedState = DEVICE_OFF;
             deviceArray[Alarm_DeviceID-1].appCommandReceived = true;
             deviceArray[Alarm_DeviceID-1].lastCommandTime = HAL_GetTick();
-						//UpdateState();
-						//ModeTask=Remote;
         }   
     }
-    
-//    // 發送觸發通知
-//    cJSON *root = cJSON_CreateObject();
-//    cJSON_AddStringToObject(root, "Operating", "AlarmTriggered");
-//    cJSON_AddNumberToObject(root, "Index", index);
-//    cJSON_AddNumberToObject(root, "DeviceID", alarm->device_id);
-//    
-//    char dateTimeStr[32];
-//    snprintf(dateTimeStr, sizeof(dateTimeStr),
-//             "20%02d/%02d/%02d %02d:%02d:%02d",
-//             Now_Date.Year, Now_Date.Month, Now_Date.Date,
-//             Now_Time.Hours, Now_Time.Minutes, Now_Time.Seconds);
-//    cJSON_AddStringToObject(root, "DateTime", dateTimeStr);
-//    cJSON_AddNumberToObject(root, "Weekday", Now_Date.WeekDay);
-//    cJSON_AddNumberToObject(root, "Switch", alarm->light_action);
-//    
-//    char *jsonStr = cJSON_Print(root);
-//    if(jsonStr)
-//    {
-//        UART_SEND6(jsonStr);
-//        UART_SEND6("\r\n");
-//        free(jsonStr);
-//    }
-//    cJSON_Delete(root);
 }
 
 void initDeviceStatus(void) {
