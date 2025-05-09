@@ -1,4 +1,4 @@
---cpu=Cortex-M4.fp.sp
+--cpu=Cortex-M4.fp
 "stm32f411\startup_stm32f411xe.o"
 "stm32f411\device.o"
 "stm32f411\eeprom.o"
@@ -7,6 +7,7 @@
 "stm32f411\uart.o"
 "stm32f411\xrtc.o"
 "stm32f411\cjson.o"
+"stm32f411\w25qxx.o"
 "stm32f411\main.o"
 "stm32f411\gpio.o"
 "stm32f411\freertos.o"

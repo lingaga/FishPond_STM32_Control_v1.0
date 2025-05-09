@@ -1,24 +1,27 @@
 /* USER CODE BEGIN Includes */
-#include "FreeRTOS.h"
-#include "task.h"
+//#include "FreeRTOS.h"
+//#include "task.h"
 #include "main.h"
-#include "cmsis_os.h"
+//#include "cmsis_os.h"
 #include "UART.h"
 #include "string.h"
 #include "cJSON.h"
+#include "uart.h"
+#include "FreeRTOS.h"
+#include "cmsis_os.h"
 /* USER CODE END Includes */
 
 /* USER CODE BEGIN Variables */
-extern osThreadId Task03Handle;
-extern volatile uint8_t  CurrentValue[16];
+//extern osThreadId Task03Handle;
+//extern volatile uint8_t  CurrentValue[16];
 uint8_t 	RX1Buffer[55];
 uint8_t 	RX1Data;
 uint8_t 	RX1Index=0;
-uint8_t 	RX2Data;
-char      RX2Buffer[256];
-char    	CopyRX2Buffer[256];
+uint8_t 	RX6Data;
+char      RX6Buffer[512];
+char    	CopyRX6Buffer[512];
 char  		strBuffer[106];
-uint8_t 	RX2Index=0;
+uint8_t 	RX6Index=0;
 
 uint16_t calculated_crc;
 uint16_t received_crc;
@@ -134,25 +137,25 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
   }
 	if(huart->Instance==USART6)
 	{
-		// 處理從USART2接收到的數據
-		RX2Buffer[RX2Index]=RX2Data;
-		RX2Index++;
+		// 處理從USART6接收到的數據
+		RX6Buffer[RX6Index]=RX6Data;
+		RX6Index++;
 		
-		// 檢查RX2Buffer中是否包含完整的JSON數據
-		if(RX2Buffer[0]=='{'&&RX2Buffer[RX2Index-1]=='}')
+		// 檢查RX6Buffer中是否包含完整的JSON數據
+		if(RX6Buffer[0]=='{'&&RX6Buffer[RX6Index-1]=='}')
 		{
-			// 複製完整的JSON數據到CopyRX2Buffer中
-			memcpy(CopyRX2Buffer,RX2Buffer,RX2Index);
+			// 複製完整的JSON數據到CopyRX6Buffer中
+			memcpy(CopyRX6Buffer,RX6Buffer,RX6Index);
 			// 從中斷程序中恢復Task03任務
-			xTaskResumeFromISR(Task03Handle);
-			RX2Index=0;
+			//xTaskResumeFromISR(Task03Handle);
+			RX6Index=0;
 		}	
-		else if(RX2Buffer[0]!='{'||RX2Buffer[RX2Index-1]=='}')
+		else if(RX6Buffer[0]!='{'||RX6Buffer[RX6Index-1]=='}')
 		{	
-			RX2Index=0;
+			RX6Index=0;
 		}
-		// 重新啟動USART2的中斷接收
-		HAL_UART_Receive_IT(&huart6, &RX2Data, 1);			
+		// 重新啟動USART6的中斷接收
+		HAL_UART_Receive_IT(&huart6, &RX6Data, 1);			
 	}
 }
 /* USER CODE  END  Function */

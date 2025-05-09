@@ -99,26 +99,22 @@ void GET_Time(void)
  */
 uint8_t Time_Offset(void)
 {
-	if((CheckTime.Hours+2)%24==Now_Time.Hours)
-	{
-		if(Now_Time.Minutes==CheckTime.Minutes&&Now_Time.Seconds==(CheckTime.Seconds+1))
-		{
-			if(Now_Time.Hours<2)
-				return 1;
-			else
-			{
-				Now_Time.Hours   = (CheckTime.Hours+2)%24;
-				Now_Time.Minutes = CheckTime.Minutes;
-				Now_Time.Seconds = CheckTime.Seconds;
-				if (HAL_RTC_SetTime(&xhrtc, &Now_Time, RTC_FORMAT_BIN) != HAL_OK)
-				{
-					Error_Handler();
-				}			
-			}
-			CheckTime.Hours=(CheckTime.Hours+2)%24;
-		}
-	}
-	return 0;
+    // 檢查是否過了5分鐘
+    if((CheckTime.Minutes + 5) % 60 == Now_Time.Minutes && Now_Time.Seconds == (CheckTime.Seconds + 1))
+    {
+        // 更新檢查時間
+        CheckTime.Minutes = Now_Time.Minutes;
+        CheckTime.Seconds = Now_Time.Seconds;
+        
+        // 如果分鐘進位導致小時改變
+        if(Now_Time.Minutes < CheckTime.Minutes) {
+            CheckTime.Hours = (CheckTime.Hours + 1) % 24;
+        }
+        
+        // 設置Task1Flag為GetNetTimeTask以進行時間校正
+        return 1;
+    }
+    return 0;
 }
 void SET_Alarm(void)
 {

@@ -17,7 +17,7 @@ RTC_HandleTypeDef xhrtc;
 
 char CurrentTime[20]; //YYYY/MM/DD HH:MM:SS
 char NetTime[20];     //YYYY/MM/DD HH:MM:SS
-
+char CurrentWeek[40];//W:1 2 3 4 5 6 7->一~日
 /* USER CODE END Variables */
 
 /* USER CODE BEGIN Function */
@@ -132,5 +132,31 @@ void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *xhrtc)
 	GET_Time();
 	SET_Alarm();
 }
-
+void parseTimeString(const char* timeStr) 
+{
+    int year, month, date, hour, minute, second;
+    sscanf(timeStr, "%d-%d-%d %d:%d:%d", 
+           &year, &month, &date, &hour, &minute, &second);
+    // 更新時間
+    Now_Time.Hours = hour;
+    Now_Time.Minutes = minute;
+    Now_Time.Seconds = second;
+    Now_Time.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+    Now_Time.StoreOperation = RTC_STOREOPERATION_RESET;
+    
+    // 更新日期
+    Now_Date.Year = year % 100;  // 只取後兩位
+    Now_Date.Month = month;
+    Now_Date.Date = date;
+	  
+		
+    // 設置RTC
+    HAL_RTC_SetTime(&xhrtc, &Now_Time, RTC_FORMAT_BIN);
+    HAL_RTC_SetDate(&xhrtc, &Now_Date, RTC_FORMAT_BIN);
+    
+    // 更新檢查時間
+    CheckTime.Hours = Now_Time.Hours;
+    CheckTime.Minutes = Now_Time.Minutes;
+    CheckTime.Seconds = Now_Time.Seconds;
+}
 /* USER CODE  END  Function */

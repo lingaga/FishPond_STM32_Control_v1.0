@@ -1,7 +1,7 @@
 stm32f411\eeprom.o: ..\Components\EEPROM.c
 stm32f411\eeprom.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-stm32f411\eeprom.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stddef.h
-stm32f411\eeprom.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdint.h
+stm32f411\eeprom.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+stm32f411\eeprom.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 stm32f411\eeprom.o: ../Core/Inc/FreeRTOSConfig.h
 stm32f411\eeprom.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 stm32f411\eeprom.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -54,8 +54,8 @@ stm32f411\eeprom.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_gro
 stm32f411\eeprom.o: ../Core/Inc/EEPROM.h
 stm32f411\eeprom.o: ../Core/Inc/i2c.h
 stm32f411\eeprom.o: ../Core/Inc/TimeSwitch.h
-stm32f411\eeprom.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdio.h
-stm32f411\eeprom.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdlib.h
-stm32f411\eeprom.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\string.h
+stm32f411\eeprom.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+stm32f411\eeprom.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+stm32f411\eeprom.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 stm32f411\eeprom.o: ../Core/Inc/UART.h
 stm32f411\eeprom.o: ../Core/Inc/usart.h

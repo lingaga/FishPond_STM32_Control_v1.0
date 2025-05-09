@@ -94,7 +94,12 @@ void Error_Handler(void);
 #define OPEN_ERROR6     (0x0005)
 #define OPEN_ERROR7     (0x0006)
 #define OPEN_ERROR8     (0x0007)
+
+#define W25QXX_CS_Pin GPIO_PIN_12
+#define W25QXX_CS_GPIO_Port GPIOB
 extern volatile uint8_t SetTime;
+
+
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

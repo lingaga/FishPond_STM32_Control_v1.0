@@ -17,6 +17,7 @@ extern char NetTime[20];
 void RTC_Init(void);
 void GET_Time(void);
 void SET_Alarm(void);
+void parseTimeString(const char* timeStr);
 uint8_t Time_Offset(void);
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc);
 /* USER CODE END FunctionPrototypes */

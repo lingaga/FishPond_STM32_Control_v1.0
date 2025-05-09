@@ -1,7 +1,7 @@
 stm32f411\xrtc.o: ..\Components\xRTC.c
 stm32f411\xrtc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-stm32f411\xrtc.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stddef.h
-stm32f411\xrtc.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdint.h
+stm32f411\xrtc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+stm32f411\xrtc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 stm32f411\xrtc.o: ../Core/Inc/FreeRTOSConfig.h
 stm32f411\xrtc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 stm32f411\xrtc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -51,6 +51,6 @@ stm32f411\xrtc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 stm32f411\xrtc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 stm32f411\xrtc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 stm32f411\xrtc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-stm32f411\xrtc.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdio.h
+stm32f411\xrtc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 stm32f411\xrtc.o: ../Core/Inc/xRTC.h
 stm32f411\xrtc.o: ../Core/Inc/rtc.h

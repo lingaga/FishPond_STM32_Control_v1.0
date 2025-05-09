@@ -1,8 +1,8 @@
 stm32f411\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
-stm32f411\heap_4.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdlib.h
+stm32f411\heap_4.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 stm32f411\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-stm32f411\heap_4.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stddef.h
-stm32f411\heap_4.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdint.h
+stm32f411\heap_4.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+stm32f411\heap_4.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 stm32f411\heap_4.o: ../Core/Inc/FreeRTOSConfig.h
 stm32f411\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 stm32f411\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
